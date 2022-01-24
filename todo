@@ -1,0 +1,62 @@
+-- [Done] create conda environment using python 3.9
+-- [Done] create super user
+-- [Done] create an api to generate the token
+-- [Done] create app called userservice
+-- [Done] create profile and role database model.
+
+-- [Done] User registration
+   -> user registration
+   -> automatic creation of profile
+   -> automatic creation of roles
+   -> request format
+    {
+      "username": "amin",
+      "email": "amin@gmail.com",
+      "password": "passwordamin"
+    }
+
+   -> response format
+    {
+        "_id": 8,
+        "username": "amin@gmail.com",
+        "email": "amin@gmail.com",
+        "name": "amin",
+        "isAdmin": false,
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMDkzMDI1LCJpYXQiOjE2NDMwMDY2MjUsImp0aSI6ImViNTBkZGVhNzMwZTQxMjk4ODUzOWYzMWMwZWE0MzA4IiwidXNlcl9pZCI6OH0.CPDseSVDHymbrnUPH_PxCF8nev7f-7QMdro_v4m5HWI"
+    }
+
+-- [Done] List all User with their profile and role
+   -> create a function to get all the users with respective profile and role
+   -> create a serializer class to get the profile and role for respective users
+   -> response format
+      [
+        {
+            "_id": 4,
+            "username": "jassim@gmail.com",
+            "email": "jassim@gmail.com",
+            "name": "jassim",
+            "isActive": true,
+            "profile": [
+                {
+                    "_id": "9a54c879-20a7-4676-affa-0cb5a6af99e4",
+                    "first_name": "jassim",
+                    "last_name": null,
+                    "phone_number": null
+                }
+            ],
+            "role": [
+                {
+                    "_id": "2c950073-9c5c-488a-ace4-c008a78f6197",
+                    "isPdfDownload": true,
+                    "apiCurrentLimit": 10
+                }
+            ]
+        }...
+      ]
+
+-- [Done] Delete the User with profile and role
+   -> create a function to delete the user
+   -> response format
+      "User was deleted"
+
+-- [Done] add swagger ui for the superuser access
